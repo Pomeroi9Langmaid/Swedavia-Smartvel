@@ -1,0 +1,35 @@
+Swedavia Solution Hub v16 - Upload Checklist
+
+Upload ALL files inside this unzipped folder to GitHub. Do not upload the zip itself.
+
+Important image/doc files referenced by index.html:
+- 01_airport_route_discovery.jpg
+- 01_destination_map.jpg
+- 01_passenger_reassurance.jpg
+- 02_city_content.jpg
+- 02_passenger_planning.jpg
+- 02_structured_information.jpg
+- 03_operational_support.jpg
+- 03_travel_preparation.jpg
+- 03_travel_readiness.jpg
+- 04_campaign_usage.jpg
+- 04_crm_and_email_campaigns.jpg
+- 05_journey_flow.jpg
+- 05_travel_steps_alignment.jpg
+- 06_airport_network.jpg
+- 06_scalable_airport_network.jpg
+- entrydocs_detail_hero.mp4
+- exploreandgo.png
+- explorego_hero_video.mp4
+- explorego_technical_documentation.pdf
+- explorego_v73_approved_journey_cropped.jpg
+- home_v52_cinematic_inspire.jpg
+- implementation_plan.pdf
+- smartvel_logo.png
+- swedavia_explorego_mockup_compressed.pdf
+- swedavia_implementation_timeline_full.jpg
+- tripplanner.png
+- tripplanner_hero_video.mp4
+- tripplanner_v73_approved_journey_cropped.jpg
+
+Missing local references found during build: none
