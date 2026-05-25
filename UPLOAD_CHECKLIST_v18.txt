@@ -1,0 +1,7 @@
+Swedavia Solution Hub v18
+
+Upload all files from the unzipped folder to GitHub. Do not upload the ZIP itself.
+
+Update in v18: removed the 'Download implementation timeline image' button. The implementation timeline remains visible as an image on the page, and the implementation plan PDF download remains.
+
+Missing local references found during build: none
