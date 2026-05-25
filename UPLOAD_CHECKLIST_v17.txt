@@ -1,0 +1,7 @@
+Swedavia Solution Hub v17
+
+Upload all files from the unzipped folder to GitHub. Do not upload the ZIP itself.
+
+Missing local references found during build: none
+
+Key update in v17: added clear review-introduction section explaining the three Smartvel solutions: Explore & Go, Trip Planner and EntryDocs.

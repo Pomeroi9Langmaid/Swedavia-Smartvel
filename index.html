@@ -119,6 +119,21 @@
     .implementation-timeline-card{background:#fff;border:1px solid var(--line);border-radius:32px;padding:18px;box-shadow:var(--shadow-soft);overflow:hidden;margin-top:26px}
     .implementation-timeline-card img{width:100%;height:auto;display:block;border-radius:24px;border:1px solid var(--line)}
 
+
+    .purpose-panel{background:#fff;border:1px solid var(--line);border-radius:34px;padding:34px;box-shadow:var(--shadow-soft)}
+    .purpose-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    .purpose-card{background:linear-gradient(180deg,#ffffff 0%,#f8fcff 100%);border:1px solid var(--line);border-radius:26px;padding:24px;display:flex;flex-direction:column;gap:12px;min-height:250px}
+    .purpose-card .solution-pill{display:inline-flex;width:max-content;padding:7px 10px;border-radius:999px;background:#eaf7f1;color:#0b6b55;font-weight:900;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+    .purpose-card h3{margin:0;color:#083b66}
+    .purpose-card p{margin:0}
+    .purpose-card .mini-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+    .purpose-card .mini-actions a{font-size:13px;padding:10px 12px;border-radius:12px}
+    .review-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+    .review-item{border:1px solid var(--line);border-radius:18px;padding:16px;background:#f8fbfd}
+    .review-item b{display:block;color:#073b66;margin-bottom:5px}
+    .review-item span{font-size:14px;color:#486078;line-height:1.45}
+    @media(max-width:1000px){.purpose-grid,.review-list{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -130,6 +145,7 @@
 <div class="brand-text">Swedavia solution hub<span>Passenger experience &amp; destination content</span></div>
 </div>
 <nav class="navlinks">
+<a href="#review-guide">Overview</a>
 <a href="#explore">Explore &amp; Go</a>
 <a href="#tripplanner">Trip Planner</a>
 <a href="#entrydocs">EntryDocs</a>
@@ -153,7 +169,7 @@
 <a class="btn ghost" href="#entrydocs">EntryDocs</a>
 
 </div>
-<div class="hero-note">This hub consolidates the solution demos, mock-ups and technical discussions into one place. It is designed to clarify what each solution does, how Swedavia could use it across airports and channels, and how the right Swedavia setup can be shaped for internal review.</div>
+<div class="hero-note">This hub consolidates the three Smartvel solutions currently under review with Swedavia — Explore &amp; Go, Trip Planner and EntryDocs — together with demo examples, use cases, setup considerations and technical documentation.</div>
 </div>
 <div class="hero-stage">
 <div class="stage-main">
@@ -176,6 +192,59 @@
 </div>
 </div>
 </section>
+
+<section class="section soft" id="review-guide">
+<div class="wrap">
+<div class="purpose-panel">
+<div class="section-head" style="margin-bottom:0">
+<div>
+<div class="kicker">For Swedavia review</div>
+<h2>Three Smartvel solutions to review in one place.</h2>
+</div>
+<p>This page is designed for Swedavia’s Digital Channels, IT, Commercial and wider stakeholder teams to review the three Smartvel solutions discussed together, see how they work, access demo examples and download supporting technical material where needed.</p>
+</div>
+
+<div class="purpose-grid">
+<article class="purpose-card">
+<span class="solution-pill">Solution 1</span>
+<h3>Explore &amp; Go</h3>
+<p>Interactive destination discovery for airport websites and campaigns. Passengers can explore where they can fly, browse destinations visually and filter by interests, themes or route logic.</p>
+<div class="mini-actions">
+<a class="btn blue" href="https://demo-swedavia-explorego.cst.smartvel.com/#modal" rel="noopener" target="_blank">Open Swedavia demo</a>
+<a class="btn ghost" href="#explore">Review section</a>
+</div>
+</article>
+
+<article class="purpose-card">
+<span class="solution-pill">Solution 2</span>
+<h3>Trip Planner</h3>
+<p>Destination engagement once a passenger has selected a city: POIs, events, restaurants, recommendations, itinerary tools and content that can support Travel Steps-style journeys.</p>
+<div class="mini-actions">
+<a class="btn blue" href="#tripplanner">Review section</a>
+</div>
+</article>
+
+<article class="purpose-card">
+<span class="solution-pill">Solution 3</span>
+<h3>EntryDocs</h3>
+<p>Travel requirement guidance for passengers before they travel, including route-specific document, visa, health and entry requirement information.</p>
+<div class="mini-actions">
+<a class="btn blue" href="https://www.finnair.com/fi-en/travel-documents/travel-requirements-for-your-trip" rel="noopener" target="_blank">View live example</a>
+<a class="btn ghost" href="#entrydocs">Review section</a>
+</div>
+</article>
+</div>
+
+<div class="review-list">
+<div class="review-item"><b>See demos</b><span>Use the linked demo/live examples to understand the passenger experience.</span></div>
+<div class="review-item"><b>Review use cases</b><span>See how the solutions can support airport destination discovery, Travel Steps and marketing activity.</span></div>
+<div class="review-item"><b>Check setup needs</b><span>Review what needs confirming: airports, destinations, languages and missing destination coverage.</span></div>
+<div class="review-item"><b>Download technical docs</b><span>Technical documentation and implementation material are available at the bottom of the page.</span></div>
+</div>
+</div>
+</div>
+</section>
+
 <section class="section soft" id="context">
 <div class="wrap">
 <div class="section-head">
