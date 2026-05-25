@@ -1,0 +1,18 @@
+Upload these files to the SAME GitHub directory as index.html.
+
+This fixes download buttons such as 'Download Swedavia mock-up PDF'.
+
+Important: filenames must remain exactly as shown. Do not rename them.
+
+Files included:
+- entrydocs_playbook.pdf
+- entrydocs_product_sheet.pdf
+- explorego_playbook.pdf
+- explorego_product_sheet.pdf
+- explorego_technical_documentation.pdf
+- implementation_plan.pdf
+- swedavia_explorego_mockup_compressed.pdf
+- tripplanner_playbook.pdf
+- tripplanner_product_sheet.pdf
+
+Missing from source package: none
