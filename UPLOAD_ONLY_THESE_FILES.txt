@@ -1,0 +1,14 @@
+Swedavia Solution Hub - V22 UPDATE ONLY from V21
+
+This is NOT a lighter version. It preserves the V22 site logic and assumes the existing V21 files/videos are already in GitHub.
+
+Upload ONLY the files in this folder to GitHub. Do not delete existing files in the repo.
+This avoids re-uploading every video/image/PDF again through the GitHub web uploader.
+
+Files included here are new or changed compared with V21:
+- UPLOAD_CHECKLIST_v22.txt
+- explorego_playbook.pdf
+- explorego_product_sheet.pdf
+- index.html
+
+Files removed compared with V21: none

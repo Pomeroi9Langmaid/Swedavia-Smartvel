@@ -1,0 +1,8 @@
+Swedavia Solution Hub v22
+
+Upload all files from the unzipped folder to GitHub. Do not upload the ZIP itself.
+
+Update in v22: added more detailed info buttons for Explore & Go, Trip Planner and EntryDocs; added Explore & Go product sheet/playbook; added bottom CTA to review all Smartvel solutions.
+
+Copied additional PDFs: explorego_product_sheet.pdf, explorego_playbook.pdf
+Missing local references found during build: none
