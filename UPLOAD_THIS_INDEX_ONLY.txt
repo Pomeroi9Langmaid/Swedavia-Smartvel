@@ -1,0 +1,11 @@
+Swedavia Solution Hub v26 - Figma clarity update
+
+Upload ONLY index.html from this folder to GitHub, overwriting the existing index.html.
+
+Fix applied:
+- Figma button now says: Open clickable Figma mock-ups (Explore & Go + Trip Planner).
+- Added helper text clarifying that Figma is the visual mock-up board and the live demos are separate.
+- No assets/PDFs/videos changed.
+
+Figma URL:
+https://www.figma.com/design/xdQ8oeKZN1ArGLW1cRyYvy/Swedavia-%7C-Explore-Go---Trip-Planner?node-id=0-1&t=tf35po4M9p83J3jP-1
