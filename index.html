@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swedavia × Smartvel | Passenger Experience & Destination Content Hub</title>
+  <style>
+    :root{
+      --smartvel-blue:#125885;
+      --smartvel-cyan:#29AAE0;
+      --smartvel-orange:#FF9400;
+      --swedavia-blue:#003B71;
+      --swedavia-green:#78BE20;
+      --ink:#0b2036;
+      --muted:#5b6b7f;
+      --line:#d9e7f0;
+      --soft:#f5f9fc;
+      --soft-green:#f1faec;
+      --white:#ffffff;
+      --shadow:0 28px 90px rgba(6,31,54,.14);
+      --shadow-soft:0 16px 46px rgba(6,31,54,.08);
+      --radius:34px;
+      --max:1640px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Poppins,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#fff;color:var(--ink);}
+    a{color:inherit;text-decoration:none}
+    img,video{max-width:100%;display:block}
+    p{font-size:17px;line-height:1.62;color:#3d536a;margin:0}
+    .wrap{width:min(var(--max),calc(100vw - 64px));margin:0 auto}
+    .mini-wrap{width:min(1280px,calc(100vw - 64px));margin:0 auto}
+    header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(217,231,240,.82)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:16px;min-width:260px}
+    .brand img{width:142px;height:auto}
+    .brand-line{height:36px;width:1px;background:var(--line)}
+    .brand-text{font-weight:900;letter-spacing:-.035em;font-size:17px;line-height:1.1;color:#10233a}.brand-text span{display:block;font-size:11px;letter-spacing:.02em;color:#64748b;margin-top:3px;text-transform:uppercase}
+    .navlinks{display:flex;gap:18px;align-items:center;font-size:13px;font-weight:900;color:#31465c}.navlinks a{padding:8px 0}.navlinks a:hover{color:var(--smartvel-blue)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:12px 17px;border-radius:999px;border:1px solid transparent;font-size:13px;font-weight:900;line-height:1;white-space:nowrap;transition:.2s ease;cursor:pointer}.btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:linear-gradient(135deg,var(--smartvel-orange),#ffb347);color:white;box-shadow:0 18px 34px rgba(255,148,0,.20)}
+    .btn.blue{background:linear-gradient(135deg,var(--smartvel-blue),var(--smartvel-cyan));color:white;box-shadow:0 18px 34px rgba(18,88,133,.18)}
+    .btn.ghost{background:white;color:var(--smartvel-blue);border-color:#cfe0ea}.btn.dark{background:#08243d;color:#fff}.btn.soft{background:#f4f9fc;color:#0b3d66;border-color:#dbe8ef}
+
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 10% 10%,rgba(120,190,32,.16),transparent 28%),radial-gradient(circle at 86% 5%,rgba(41,170,224,.17),transparent 26%),linear-gradient(180deg,#f7fbfe 0%,#fff 66%);}
+    .hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(18,88,133,.035) 0 1px,transparent 1px 70px);pointer-events:none}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center;min-height:calc(100vh - 76px);padding:76px 0 56px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border-radius:999px;background:white;border:1px solid var(--line);color:var(--smartvel-blue);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 10px 26px rgba(6,31,54,.05);margin-bottom:18px}.dotpulse{width:8px;height:8px;border-radius:50%;background:var(--swedavia-green);box-shadow:0 0 0 6px rgba(120,190,32,.15)}
+    h1{font-size:clamp(50px,5.7vw,92px);line-height:.92;letter-spacing:-.075em;margin:0 0 22px;color:#10233a}h1 strong{color:var(--smartvel-orange)}
+    .lead{font-size:21px;line-height:1.54;color:#40556c;max-width:780px}.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}.hero-note{margin-top:22px;border-left:4px solid var(--swedavia-green);padding:14px 0 14px 16px;color:#466075;font-size:14px;line-height:1.55;max-width:760px}
+    .hero-stage{position:relative;min-height:650px}.stage-main{height:650px;border-radius:42px;overflow:hidden;border:1px solid #d5e4ee;box-shadow:var(--shadow);background:#071f36;position:relative}.stage-main video{width:100%;height:100%;object-fit:cover;opacity:.88}.stage-main:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,24,41,.05),rgba(4,24,41,.58))}.stage-caption{position:absolute;left:28px;bottom:28px;right:28px;z-index:3;color:white}.stage-caption h2{font-size:34px;line-height:1.05;letter-spacing:-.045em;margin:0 0 8px;color:white}.stage-caption p{color:rgba(255,255,255,.82);font-size:14px;max-width:620px}
+    .float-card{position:absolute;z-index:4;background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.82);box-shadow:0 24px 70px rgba(6,31,54,.22);border-radius:24px;padding:18px;color:#10233a}.float-card strong{display:block;color:var(--smartvel-blue);font-size:15px;margin-bottom:5px}.float-card span{font-size:13px;color:#5e7083;line-height:1.4}.fc1{top:32px;left:-20px;width:248px}.fc2{right:-10px;top:92px;width:252px}.fc3{right:28px;bottom:96px;width:275px}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:15px}.metric{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);border-radius:15px;padding:11px}.metric b{display:block;color:#fff;font-size:16px}.metric span{color:rgba(255,255,255,.74);font-size:11px}
+
+    .section{padding:92px 0}.section.soft{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.section.dark{background:linear-gradient(135deg,#061f36,#0b5d88 70%,#1689bf);color:white}.section.dark p{color:rgba(255,255,255,.78)}
+    .section-head{display:grid;grid-template-columns:.82fr 1fr;gap:38px;align-items:end;margin-bottom:34px}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:950;color:var(--smartvel-orange);margin-bottom:12px}.section h2{font-size:clamp(36px,4.1vw,64px);line-height:1.01;letter-spacing:-.062em;margin:0;color:#10233a}.section.dark h2{color:white}.section-head p{font-size:18px;max-width:790px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:white;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow-soft);min-height:170px}.card h3{font-size:20px;line-height:1.14;margin:0 0 9px;letter-spacing:-.035em;color:#0b3d66}.card p{font-size:14px;color:#53687d}.card.feature{min-height:210px}.icon{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#eaf6fd,#f3faec);display:grid;place-items:center;font-weight:950;color:var(--smartvel-blue);margin-bottom:14px}
+    .solution{padding:0}.solution-shell{border:1px solid var(--line);border-radius:38px;background:white;box-shadow:var(--shadow);overflow:hidden}.solution-hero{display:grid;grid-template-columns:.86fr 1.14fr;min-height:620px}.solution-copy{padding:48px}.solution-copy h2{font-size:clamp(44px,4.8vw,74px);line-height:.95;letter-spacing:-.07em;margin:0 0 16px}.solution-copy p{font-size:17px}.solution-video{position:relative;background:#051b2e;min-height:560px;overflow:hidden}.solution-video video,.solution-video img{width:100%;height:100%;object-fit:cover}.solution-video:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,27,46,0),rgba(5,27,46,.45))}.value-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.value{border:1px solid #e1edf4;background:#f8fbfd;border-radius:18px;padding:16px}.value b{display:block;color:#0b3d66;font-size:14px;margin-bottom:5px}.value span{font-size:12px;color:#5c7084;line-height:1.45}.media-label{position:absolute;left:24px;bottom:24px;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-radius:999px;padding:11px 14px;font-size:12px;font-weight:950;color:#0b3d66;box-shadow:0 12px 30px rgba(0,0,0,.14)}
+    .deep-panel{padding:36px 48px;border-top:1px solid var(--line)}.deep-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}.deep-grid.reverse{grid-template-columns:.95fr 1.05fr}.image-card{border-radius:30px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 54px rgba(6,31,54,.10);background:white}.image-card img{width:100%;height:100%;object-fit:cover}.copy-block h3{font-size:28px;line-height:1.1;letter-spacing:-.04em;margin:0 0 12px;color:#10233a}.copy-block p{font-size:16px;margin-bottom:14px}.tick-list{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}.tick-list li{display:flex;gap:10px;color:#3d536a;font-size:15px;line-height:1.45}.tick-list li:before{content:"✓";color:var(--swedavia-green);font-weight:950}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{display:inline-flex;padding:8px 11px;border-radius:999px;background:#edf7fb;border:1px solid #d7eaf4;color:#0b507d;font-size:12px;font-weight:900}
+    .journey-strip{padding:30px 48px;border-top:1px solid var(--line);background:#fbfdff}.journey-strip img{width:100%;border-radius:28px;border:1px solid var(--line);box-shadow:0 14px 44px rgba(6,31,54,.07)}
+    .marketing-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}.campaign-board{border-radius:36px;background:#061f36;color:white;overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr}.campaign-board img{height:100%;object-fit:cover}.campaign-copy{padding:32px}.campaign-copy h3{font-size:32px;line-height:1.08;letter-spacing:-.045em;margin:0 0 12px;color:white}.campaign-copy p{color:rgba(255,255,255,.78)}.email-mock{background:white;border:1px solid var(--line);border-radius:36px;padding:26px;box-shadow:var(--shadow-soft)}.email-head{height:46px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;color:#64748b;font-size:13px;font-weight:800}.email-visual{margin-top:18px;border-radius:24px;overflow:hidden;height:190px;background:url('assets/home_v52_cinematic_inspire.jpg') center/cover}.email-body{display:grid;gap:10px;margin-top:18px}.skeleton{height:12px;border-radius:99px;background:#e7eef4}.skeleton.w70{width:70%}.skeleton.w88{width:88%}.email-cta{margin-top:16px;height:42px;border-radius:999px;background:linear-gradient(135deg,var(--smartvel-orange),#ffb347);width:170px}
+    .travelsteps{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:26px}.step{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:18px;min-height:170px}.step b{display:grid;place-items:center;width:38px;height:38px;border-radius:14px;background:white;color:var(--smartvel-blue);margin-bottom:13px}.step strong{display:block;color:white;font-size:15px;margin-bottom:7px}.step span{display:block;color:rgba(255,255,255,.76);font-size:13px;line-height:1.45}
+    .geneva{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.geneva-visual{position:relative;border-radius:36px;overflow:hidden;min-height:420px;background:url('assets/geneva_showcase_bg_clean.jpg') center/cover;box-shadow:var(--shadow)}.geneva-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,31,54,.05),rgba(6,31,54,.68))}.geneva-cards{position:absolute;z-index:2;left:24px;right:24px;bottom:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.geneva-cards img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.45)}
+    .scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.scope-card{background:white;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow-soft)}.scope-card b{display:block;font-size:18px;color:#0b3d66;margin-bottom:8px}.scope-card p{font-size:14px}.scope-note{margin-top:22px;border-left:4px solid var(--smartvel-orange);background:#fff9ef;border-radius:14px;padding:18px;color:#574361;font-size:14px;line-height:1.55}
+    .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.doc-card{background:white;border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:var(--shadow-soft)}.doc-card h3{font-size:24px;margin:0 0 10px;color:#0b3d66}.doc-card p{font-size:15px}.process{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.process-step{background:white;border:1px solid var(--line);border-radius:22px;padding:20px;min-height:160px}.process-step b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--smartvel-blue),var(--smartvel-cyan));color:white;margin-bottom:12px}.process-step strong{display:block;color:#0b3d66;margin-bottom:6px}.process-step span{font-size:13px;color:#53687d;line-height:1.45}
+    footer{background:#061f36;color:white;padding:44px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner img{width:138px;filter:brightness(0) invert(1)}.footer-inner p{color:rgba(255,255,255,.70);font-size:13px;max-width:760px}.placeholder{font-size:12px;color:#8a5b08;background:#fff8e7;border:1px solid #f2d083;padding:10px 12px;border-radius:14px;margin-top:12px}
+    @media(max-width:1180px){.hero-inner,.solution-hero,.deep-grid,.deep-grid.reverse,.marketing-grid,.campaign-board,.geneva,.doc-grid{grid-template-columns:1fr}.hero-stage,.stage-main{min-height:560px}.cards,.scope-grid,.process{grid-template-columns:1fr 1fr}.travelsteps{grid-template-columns:repeat(3,1fr)}.navlinks{display:none}.float-card{position:static;margin-top:12px;width:auto}.stage-main{height:520px}.hero-stage{min-height:auto}.fc1,.fc2,.fc3{width:auto}.geneva-cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:720px){.wrap,.mini-wrap{width:calc(100vw - 28px)}.hero-inner{padding:46px 0;gap:24px}h1{font-size:48px}.lead{font-size:18px}.section{padding:64px 0}.section-head{grid-template-columns:1fr}.cards,.scope-grid,.process,.travelsteps,.value-grid{grid-template-columns:1fr}.solution-copy,.deep-panel,.journey-strip{padding:26px}.hero-stage,.stage-main{min-height:470px}.stage-main{height:470px}.footer-inner{flex-direction:column;align-items:flex-start}.metric-row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="assets/smartvel_logo.png" alt="Smartvel">
+      <div class="brand-line"></div>
+      <div class="brand-text">Swedavia solution hub<span>Passenger experience & destination content</span></div>
+    </div>
+    <nav class="navlinks">
+      <a href="#explore">Explore & Go</a>
+      <a href="#tripplanner">Trip Planner</a>
+      <a href="#entrydocs">EntryDocs</a>
+      <a href="#marketing">Marketing</a>
+      <a href="#scope">Scope</a>
+      <a href="#technical">Technical</a>
+    </nav>
+    <a class="btn blue" href="#scope">Next steps</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow"><span class="dotpulse"></span> Prepared for Swedavia Airports</div>
+        <h1>Helping passengers <strong>discover, plan and prepare</strong> for travel.</h1>
+        <p class="lead">A Swedavia-specific overview of Smartvel’s destination and travel-content solutions — built for your digital, commercial and technical teams to review internally.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#explore">Explore & Go</a>
+          <a class="btn blue" href="#tripplanner">Trip Planner</a>
+          <a class="btn ghost" href="#entrydocs">EntryDocs</a>
+          <a class="btn soft" href="#technical">Technical docs</a>
+        </div>
+        <div class="hero-note">This hub consolidates the solution demos, mock-ups and technical discussions into one place. It is designed to clarify what each solution does, how Swedavia could use it across airports and channels, and what must be scoped before final commercials are prepared.</div>
+      </div>
+      <div class="hero-stage">
+        <div class="stage-main">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/home_v53_cinematic_journey_strip.jpg">
+            <source src="assets/explorego_hero_video.mp4" type="video/mp4">
+          </video>
+          <div class="stage-caption">
+            <h2>From route discovery to destination engagement.</h2>
+            <p>Smartvel content can support airport websites, apps, route campaigns, passenger communications and Travel Steps-style journeys.</p>
+            <div class="metric-row">
+              <div class="metric"><b>Discover</b><span>Routes & destinations</span></div>
+              <div class="metric"><b>Plan</b><span>POIs, events & itineraries</span></div>
+              <div class="metric"><b>Prepare</b><span>Requirements & guidance</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="float-card fc1"><strong>Airport destination discovery</strong><span>Show where passengers can fly from each airport.</span></div>
+        <div class="float-card fc2"><strong>Marketing activation</strong><span>Use content in route launches, newsletters and seasonal campaigns.</span></div>
+        <div class="float-card fc3"><strong>Managed content layer</strong><span>Content, updates and product logic are handled within the agreed Smartvel scope.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="context">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Swedavia context</div><h2>Not just a website widget — a reusable passenger-content layer.</h2></div>
+        <p>Smartvel’s solutions can be used across destination pages, airport route discovery, Travel Steps, email marketing, pre-departure communications and destination inspiration journeys. The value is strongest when the content is treated as a reusable digital asset, not as a single isolated page component.</p>
+      </div>
+      <div class="cards">
+        <article class="card feature"><div class="icon">01</div><h3>Airport route discovery</h3><p>Help passengers understand where they can fly from each Swedavia airport through visual, interactive destination discovery.</p></article>
+        <article class="card feature"><div class="icon">02</div><h3>Passenger planning</h3><p>Move from static destination information into richer destination planning with POIs, live events, maps and itinerary tools.</p></article>
+        <article class="card feature"><div class="icon">03</div><h3>Travel preparation</h3><p>Support passengers before travel with clear requirements, documents, visas and health information.</p></article>
+        <article class="card feature"><div class="icon">04</div><h3>CRM & email campaigns</h3><p>Use destination content to power route-launch emails, seasonal campaigns and airport-specific travel inspiration.</p></article>
+        <article class="card feature"><div class="icon">05</div><h3>Travel Steps alignment</h3><p>Surface the right content at the right point in the passenger journey: inspiration, planning, preparation and in-destination support.</p></article>
+        <article class="card feature"><div class="icon">06</div><h3>Scalable airport network</h3><p>Scope can be defined by airport, city/destination, language and solution combination before a final commercial proposal is prepared.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section solution" id="explore">
+    <div class="wrap">
+      <div class="solution-shell">
+        <div class="solution-hero">
+          <div class="solution-copy">
+            <div class="kicker">Solution 1 · Destination inspiration + route discovery</div>
+            <h2>Explore & Go</h2>
+            <p>Explore & Go transforms static destination lists into interactive discovery experiences. Passengers can browse destinations visually, filter by interests, and understand where they can travel from a selected airport or route network.</p>
+            <div class="value-grid">
+              <div class="value"><b>Interactive discovery</b><span>Maps, filters and visual destination cards replace passive destination lists.</span></div>
+              <div class="value"><b>Airport-specific views</b><span>Experiences can be configured around agreed airports, origins and destination sets.</span></div>
+              <div class="value"><b>Campaign-ready</b><span>Supports seasonal routes, new route launches and destination marketing.</span></div>
+              <div class="value"><b>Intent generation</b><span>Moves passengers from passive browsing towards destination consideration.</span></div>
+            </div>
+            <div class="hero-actions">
+              <a class="btn primary" href="EXPLORE_GO_DEMO_LINK_HERE" target="_blank" rel="noopener">Open Swedavia Explore & Go demo</a>
+              <a class="btn ghost" href="assets/swedavia_explorego_mockup.pdf" download>Download Swedavia mock-up PDF</a>
+            </div>
+            <div class="placeholder">Replace EXPLORE_GO_DEMO_LINK_HERE with the final Swedavia-branded demo URL.</div>
+          </div>
+          <div class="solution-video">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/exploreandgo.png"><source src="assets/explorego_hero_video.mp4" type="video/mp4"></video>
+            <div class="media-label">Explore & Go visual discovery environment</div>
+          </div>
+        </div>
+        <div class="journey-strip"><img src="assets/explorego_v73_approved_journey_cropped.jpg" alt="Explore & Go journey: dream, discover, engage and convert"></div>
+        <div class="deep-panel">
+          <div class="deep-grid">
+            <div class="image-card"><img src="assets/exploreandgo.png" alt="Explore & Go product visual"></div>
+            <div class="copy-block">
+              <h3>How Swedavia could use Explore & Go</h3>
+              <p>The strongest Swedavia use case is visualising destination choice from each airport: a passenger selects an airport, explores available destinations, filters by interest or travel type, and opens destination content directly from the map or list.</p>
+              <ul class="tick-list">
+                <li>Show destinations served from selected Swedavia airports.</li>
+                <li>Support airport-level route showcases without implying every airport must launch at once.</li>
+                <li>Highlight seasonal routes, charter routes and campaign destinations.</li>
+                <li>Use direct-route logic, origin logic and interest filters where technically scoped.</li>
+                <li>Connect destination inspiration to booking, route pages or campaign CTAs.</li>
+              </ul>
+              <div class="tags"><span class="tag">Destination inspiration</span><span class="tag">Route discovery</span><span class="tag">Airport campaigns</span><span class="tag">Interactive maps</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="marketing">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Beyond the website</div><h2>Content that can support Swedavia’s marketing and CRM activity.</h2></div>
+        <p>The solutions can support more than destination pages. Explore & Go and Trip Planner content can be used to enrich passenger emails, route launches, campaign landing pages and seasonal destination inspiration.</p>
+      </div>
+      <div class="marketing-grid">
+        <div class="campaign-board">
+          <img src="assets/home_v52_cinematic_inspire.jpg" alt="Destination inspiration campaign visual">
+          <div class="campaign-copy">
+            <h3>Route launches, newsletters and seasonal campaigns.</h3>
+            <p>Swedavia can use destination content as a campaign asset: “new routes from this airport”, “summer destinations”, “city breaks this autumn”, or “what to do when you arrive”.</p>
+            <div class="tags"><span class="tag">New routes</span><span class="tag">Seasonal travel</span><span class="tag">Airport newsletters</span><span class="tag">Destination inspiration</span></div>
+          </div>
+        </div>
+        <div class="email-mock">
+          <div class="email-head"><span>Swedavia inspiration email</span><span>Campaign preview</span></div>
+          <div class="email-visual"></div>
+          <div class="email-body"><div class="skeleton w88"></div><div class="skeleton w70"></div><div class="skeleton w88"></div></div>
+          <div class="email-cta"></div>
+          <p style="font-size:13px;margin-top:14px;color:#60758a">Example use: route announcement or themed destination email linking into Explore & Go or Trip Planner.</p>
+        </div>
+      </div>
+      <div class="cards" style="margin-top:16px">
+        <article class="card"><h3>New route announcement</h3><p>Use Explore & Go to showcase the route and Trip Planner to show why the destination is worth visiting.</p></article>
+        <article class="card"><h3>Seasonal travel campaign</h3><p>Promote summer beaches, winter city breaks, culture trips or family-friendly destinations from specific airports.</p></article>
+        <article class="card"><h3>Passenger re-engagement</h3><p>Bring passengers back into Swedavia’s ecosystem with destination ideas after they browse or subscribe.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section solution" id="tripplanner">
+    <div class="wrap">
+      <div class="solution-shell">
+        <div class="solution-hero">
+          <div class="solution-video">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/tripplanner.png"><source src="assets/tripplanner_hero_video.mp4" type="video/mp4"></video>
+            <div class="media-label">Trip Planner destination engagement environment</div>
+          </div>
+          <div class="solution-copy">
+            <div class="kicker">Solution 2 · Destination engagement + itinerary intelligence</div>
+            <h2>Trip Planner</h2>
+            <p>Trip Planner turns destination content into an active planning experience. It combines POIs, restaurants, live events, maps and itinerary tools so passengers can explore what to do before and during travel.</p>
+            <div class="value-grid">
+              <div class="value"><b>POIs & restaurants</b><span>Useful places, attractions, food, culture and local highlights.</span></div>
+              <div class="value"><b>Live events</b><span>Concerts, exhibitions, sport, festivals and activities linked to travel dates.</span></div>
+              <div class="value"><b>Interactive maps</b><span>Let travellers understand location, proximity and itinerary structure.</span></div>
+              <div class="value"><b>Partner-ready CTAs</b><span>Can link to booking flows, ancillary services or third-party providers where agreed.</span></div>
+            </div>
+            <div class="hero-actions"><a class="btn primary" href="TRIP_PLANNER_DEMO_LINK_HERE" target="_blank" rel="noopener">Open Trip Planner demo</a></div>
+            <div class="placeholder">Replace TRIP_PLANNER_DEMO_LINK_HERE with the final demo URL.</div>
+          </div>
+        </div>
+        <div class="journey-strip"><img src="assets/tripplanner_v73_approved_journey_cropped.jpg" alt="Trip Planner journey: from inspiration to planning"></div>
+        <div class="deep-panel">
+          <div class="deep-grid reverse">
+            <div class="copy-block">
+              <h3>Where Trip Planner fits for Swedavia</h3>
+              <p>Trip Planner becomes most relevant after a passenger has chosen, searched or been shown a destination. It gives Swedavia deeper content for destination pages, Travel Steps and pre-trip inspiration.</p>
+              <ul class="tick-list">
+                <li>Support “what to do in Stockholm / Gothenburg / destination city” content journeys.</li>
+                <li>Provide stopover and short-stay inspiration where relevant.</li>
+                <li>Surface live events and timely activities around travel dates.</li>
+                <li>Connect destination content to airport services, partners or booking CTAs.</li>
+                <li>Keep passengers engaged beyond the route or destination listing.</li>
+              </ul>
+              <div class="tags"><span class="tag">Live agenda</span><span class="tag">POIs</span><span class="tag">Itineraries</span><span class="tag">Maps</span><span class="tag">Partner CTAs</span></div>
+            </div>
+            <div class="image-card"><img src="assets/tripplanner.png" alt="Trip Planner product visual"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section solution" id="entrydocs">
+    <div class="wrap">
+      <div class="solution-shell">
+        <div class="solution-hero">
+          <div class="solution-copy">
+            <div class="kicker">Solution 3 · Travel requirements intelligence</div>
+            <h2>EntryDocs</h2>
+            <p>EntryDocs provides structured travel requirement guidance for passengers before departure: visas, documents, health rules and route-specific requirements presented in a clear, traveller-friendly format.</p>
+            <div class="value-grid">
+              <div class="value"><b>Inform</b><span>Show requirements according to the traveller’s specific case.</span></div>
+              <div class="value"><b>Simplify</b><span>Present complex requirements in a structured and understandable way.</span></div>
+              <div class="value"><b>Reassure</b><span>Reduce uncertainty before passengers arrive at the airport.</span></div>
+              <div class="value"><b>Support operations</b><span>Reduce avoidable questions around documents and travel rules.</span></div>
+            </div>
+            <div class="hero-actions"><a class="btn primary" href="ENTRYDOCS_DEMO_LINK_HERE" target="_blank" rel="noopener">Open EntryDocs demo</a></div>
+            <div class="placeholder">Replace ENTRYDOCS_DEMO_LINK_HERE with the final demo URL.</div>
+          </div>
+          <div class="solution-video">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/entrydocs_premium_devices.png"><source src="assets/entrydocs_detail_hero.mp4" type="video/mp4"></video>
+            <div class="media-label">EntryDocs traveller guidance environment</div>
+          </div>
+        </div>
+        <div class="deep-panel">
+          <div class="deep-grid">
+            <div class="image-card"><img src="assets/entrydocs_how_it_works_ultra_realistic.png" alt="EntryDocs how it works visual"></div>
+            <div class="copy-block">
+              <h3>Why it matters for airports</h3>
+              <p>For Swedavia, EntryDocs is not simply a compliance widget. It can be part of the passenger preparation journey, reducing uncertainty before travellers arrive at the airport and supporting clearer pre-departure communication.</p>
+              <ul class="tick-list">
+                <li>Visa and travel documentation guidance.</li>
+                <li>Passport and ID document requirements.</li>
+                <li>Health requirement information where applicable.</li>
+                <li>Pre-departure reassurance in web, app or email flows.</li>
+                <li>Useful within Travel Steps preparation stages.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="journey-strip"><img src="assets/entrydocs_detail_v62_approved_value_cards.jpg" alt="EntryDocs value cards"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="travelsteps">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker" style="color:#ffb347">Passenger journey alignment</div><h2>How the solutions can support Travel Steps-style journeys.</h2></div>
+        <p>Each product can support a different stage of the passenger experience, from inspiration through travel preparation and destination engagement.</p>
+      </div>
+      <div class="travelsteps">
+        <div class="step"><b>1</b><strong>Inspiration</strong><span>Where can I fly from this airport?</span></div>
+        <div class="step"><b>2</b><strong>Discovery</strong><span>Which destination fits my interests?</span></div>
+        <div class="step"><b>3</b><strong>Planning</strong><span>What can I do when I get there?</span></div>
+        <div class="step"><b>4</b><strong>Preparation</strong><span>What documents or requirements apply?</span></div>
+        <div class="step"><b>5</b><strong>Travel</strong><span>What is relevant before and around the trip?</span></div>
+        <div class="step"><b>6</b><strong>Retention</strong><span>What should we show the passenger next?</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="geneva">
+    <div class="wrap geneva">
+      <div class="geneva-visual">
+        <div class="geneva-cards"><img src="assets/geneva_routes.jpg" alt="Geneva routes"><img src="assets/geneva_content.jpg" alt="Geneva content"><img src="assets/geneva_engagement.jpg" alt="Geneva engagement"><img src="assets/geneva_intent.jpg" alt="Geneva intent"></div>
+      </div>
+      <div class="copy-block">
+        <div class="kicker">Live airport reference</div>
+        <h3 style="font-size:44px">Geneva Airport as a practical reference point.</h3>
+        <p>Geneva provides a live airport use case for Explore & Go. It is useful as proof that the concept is already being used in an airport environment, while Swedavia’s own scope and destination logic can still be defined separately.</p>
+        <ul class="tick-list"><li>Airport industry reference, not only a generic product demo.</li><li>Useful for internal review before agreeing Swedavia’s own structure.</li><li>Can be compared against the Swedavia-branded demo once the demo link is ready.</li></ul>
+        <div class="hero-actions"><a class="btn blue" href="GENEVA_LIVE_LINK_HERE" target="_blank" rel="noopener">Open Geneva live example</a></div>
+        <div class="placeholder">Replace GENEVA_LIVE_LINK_HERE when Geneva’s public link is ready.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="scope">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Before final commercials</div><h2>Scope must be confirmed before pricing is accurate.</h2></div>
+        <p>To avoid assumptions, the commercial proposal should be built only after Swedavia confirms the required airports, destination/city scope, languages and solution combination.</p>
+      </div>
+      <div class="scope-grid">
+        <div class="scope-card"><b>Airport scope</b><p>Which Swedavia airports should be included initially? All airports, or a selected group first?</p></div>
+        <div class="scope-card"><b>Destination / city scope</b><p>Explore & Go and Trip Planner pricing depends on the agreed unique destination/city coverage.</p></div>
+        <div class="scope-card"><b>Shared destinations</b><p>Destinations served by multiple airports should be deduplicated correctly in the commercial model.</p></div>
+        <div class="scope-card"><b>Missing destinations</b><p>Any destinations not already covered need identifying because creation work may affect setup.</p></div>
+        <div class="scope-card"><b>Languages</b><p>Swedish and English are the core languages discussed. Additional languages can be added if required.</p></div>
+        <div class="scope-card"><b>Solution combination</b><p>Explore & Go, Trip Planner and EntryDocs can be scoped individually or together.</p></div>
+      </div>
+      <div class="scope-note">This section deliberately avoids pricing. Once these points are aligned, Smartvel can prepare a commercial proposal that reflects actual scope rather than assumptions.</div>
+    </div>
+  </section>
+
+  <section class="section" id="technical">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Technical documentation</div><h2>Implementation detail for technical review.</h2></div>
+        <p>The technical material should sit at the bottom of the hub as supporting documentation for Swedavia’s IT and development stakeholders.</p>
+      </div>
+      <div class="doc-grid">
+        <div class="doc-card"><h3>Explore & Go technical documentation</h3><p>Includes embed code, API key usage, language parameter, autoloader, available parameters such as origin, destination, direct flights, categories and prices, plus event tracking and browser support.</p><div class="hero-actions"><a class="btn blue" href="assets/explorego_technical_documentation.pdf" download>Download Explore & Go technical PDF</a></div></div>
+        <div class="doc-card"><h3>Commercial implementation plan</h3><p>Outlines the standard process after agreement: account setup, kick-off, implementation details, widget integration, QA access, integration review and go-live.</p><div class="hero-actions"><a class="btn ghost" href="assets/commercial_implementation_plan.pdf" download>Download implementation plan</a></div></div>
+      </div>
+      <div class="doc-card" style="margin-top:20px"><h3>Implementation process after agreement</h3><p>Only after scope and commercials are agreed should the project move into implementation. The standard widget implementation flow is shown below.</p><div class="process">
+        <div class="process-step"><b>1</b><strong>Agreement signed</strong><span>Commercial proposal and services confirmed by both sides.</span></div>
+        <div class="process-step"><b>2</b><strong>Account setup</strong><span>Smartvel prepares account, configuration and required access/key details.</span></div>
+        <div class="process-step"><b>3</b><strong>Brand/style inputs</strong><span>Swedavia provides stylesheet, brand guidance and placement details.</span></div>
+        <div class="process-step"><b>4</b><strong>Kick-off meeting</strong><span>Teams confirm owners, technical route, QA process and timeline.</span></div>
+        <div class="process-step"><b>5</b><strong>Technical documentation</strong><span>Smartvel shares relevant documentation and implementation details.</span></div>
+        <div class="process-step"><b>6</b><strong>QA integration</strong><span>Swedavia implements into QA/staging for review.</span></div>
+        <div class="process-step"><b>7</b><strong>Integration review</strong><span>Smartvel reviews styling, functionality and behaviour.</span></div>
+        <div class="process-step"><b>8</b><strong>Feedback & validation</strong><span>Both teams review and approve final adjustments.</span></div>
+        <div class="process-step"><b>9</b><strong>Go-live</strong><span>Final production release after approval from both sides.</span></div>
+      </div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <img src="assets/smartvel_logo.png" alt="Smartvel">
+    <p>Prepared for Swedavia Airports. Draft solution hub for internal review. Placeholder links should be replaced before external sharing.</p>
+  </div>
+</footer>
+</body>
+</html>
